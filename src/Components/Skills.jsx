@@ -16,11 +16,11 @@ const Skills = () => {
     return (
         <div className='py-10'>
             <p className='text-xl text-center font-semibold'>Skills</p>
-            <div className='mt-12'>
+            <div className='mt-4'>
                 <h3 className='text-6xl text-center font-semibold'>Soft Skills</h3>
                 <div className="px-4 mx-auto sm:px-6 lg:px-8 max-w-7xl">
                     <div className="grid grid-cols-1 gap-6 mt-12 lg:mt-16 xl:gap-10 sm:grid-cols-2 lg:grid-cols-3">
-                        <div className="overflow-hidden bg-gray-800  rounded shadow">
+                        <div className="overflow-hidden bg-[#1D1E1F]  rounded shadow">
                             <div className="p-8">
                                 <div className="flex items-center">
                                     <span className='bg-primary p-3 rounded-full'><FaPeopleGroup className='text-3xl text-white' /></span>
@@ -33,7 +33,7 @@ const Skills = () => {
                             </div>
                         </div>
 
-                        <div className="overflow-hidden bg-gray-800  rounded shadow">
+                        <div className="overflow-hidden bg-[#1D1E1F]  rounded shadow">
                             <div className="p-8">
                                 <div className="flex items-center">
                                     <span className='bg-primary p-3 rounded-full'><GiTeamUpgrade className='text-3xl text-white' /></span>
@@ -47,7 +47,7 @@ const Skills = () => {
                             </div>
                         </div>
 
-                        <div className="overflow-hidden bg-gray-800  rounded shadow">
+                        <div className="overflow-hidden bg-[#1D1E1F]  rounded shadow">
                             <div className="p-8">
                                 <div className="flex items-center">
                                     <span className='bg-primary p-3 rounded-full'><IoMdDoneAll className='text-3xl text-white' /></span>
