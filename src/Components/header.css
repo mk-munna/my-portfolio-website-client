@@ -1,0 +1,79 @@
+li>a {
+    position: relative;
+    padding-bottom: 4px;
+    text-decoration: none;
+    transition: color 1.2s ease;
+    color: inherit;
+}
+
+li>a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 2px;
+    width: 100%;
+    background: #4286F4;
+    transform: scaleX(0);
+    transform-origin: 0% 100%;
+    transition: transform 0.3s ease;
+}
+
+li>a:hover::after {
+    transform: scaleX(1);
+    color: #4286F4;
+}
+
+li>a:hover {
+    color: #4286F4;
+    transition: all .2s linear;
+}
+
+.active {
+    color: #4286F4;
+    font-weight: 600;
+}
+
+.active:hover::after {
+    transform: scaleX(0);
+}
+
+@keyframes wave {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    10% {
+        transform: rotate(14deg);
+    }
+
+    20% {
+        transform: rotate(-8deg);
+    }
+
+    30% {
+        transform: rotate(14deg);
+    }
+
+    40% {
+        transform: rotate(-4deg);
+    }
+
+    50% {
+        transform: rotate(10deg);
+    }
+
+    60% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(0deg);
+    }
+}
+
+.tata {
+    display: inline-block;
+    animation: wave 2s infinite;
+    transform-origin: 70% 70%;
+}
