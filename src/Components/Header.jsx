@@ -69,15 +69,17 @@ const Header = () => {
                     </HashLink>
                 </li>
             </ul>
-            <a href={resume} download={"resume"} className='text-white border uppercase px-6 py-3 flex items-center  rounded-3xl text-sm border-primary'>
-                <motion.div
-                    initial={{ opacity: 1, y: 5, x: 0 }}
-                    animate={{ opacity: 1, y: 0, x: 0 }}
-                    transition={{ duration: 0.5, repeat: Infinity, repeatType: 'reverse' }}
-                    className=''>
-                    <i className="bi bi-cloud-download mr-2"></i>
-                </motion.div>
-                Download Resume</a>
+            <button className='text-white border uppercase px-6 py-3  rounded-3xl text-sm border-primary'>
+                <a className='flex items-center ' href={resume} download={"resume"} >
+                    <motion.div
+                        initial={{ opacity: 1, y: 5, x: 0 }}
+                        animate={{ opacity: 1, y: 0, x: 0 }}
+                        transition={{ duration: 0.5, repeat: Infinity, repeatType: 'reverse' }}
+                        className=''>
+                        <i className="bi bi-cloud-download mr-2"></i>
+                    </motion.div>
+                    Download Resume
+                </a></button>
             
         </div>
     );

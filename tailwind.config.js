@@ -13,13 +13,13 @@ export default {
 
       },
       colors: {
-        "primary": "#4286F4",
+        "primary": "rgb(45 212 191)",
         "primary2": "#e2e4e7",
         "secondary": "#E5F4F0",
         "secondary2": "#ECF0F2",
         "dark": "#182d31",
         "heading": "#05264E",
-        "Description": "#4F5E64",
+        "Description": "#45474e",
         "Description2": "#abacab",
         "heading2": '#CBCCD5',
         "dp": "#9CA3AF",
@@ -27,5 +27,7 @@ export default {
       }
     },
   },
-  plugins: [],
+  plugins: [
+    require('daisyui'),
+  ],
 }
