@@ -14,7 +14,7 @@ import { IoMdDoneAll } from 'react-icons/io';
 
 const Skills = () => {
     return (
-        <div className='py-10'>
+        <div id='skill' className='py-10'>
             <p className='text-xl text-center font-semibold'>Skills</p>
             <div className='mt-4'>
                 <h3 className='text-6xl text-center font-semibold'>Soft Skills</h3>

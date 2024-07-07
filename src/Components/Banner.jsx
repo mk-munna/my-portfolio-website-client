@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { FaCss3, FaGithub, FaHtml5 } from 'react-icons/fa';
+import { FaCss3, FaEnvelope, FaGithub, FaHtml5 } from 'react-icons/fa';
 import { useNavigate } from 'react-router-dom';
 import "./banner.css"
 // images
@@ -10,9 +10,10 @@ import tailwind from '../assets/tailwind-css.256x154.png'
 import react from '../assets/react.256x228.png'
 import mongodb from '../assets/mongodb-original.231x512.png'
 import nodejs from '../assets/file-type-node.227x256.png'
-import munna from '../assets/munna.png'
+import munna1 from '../assets/munna1.png'
+import shape from '../assets/shape.png'
 
-import { motion } from 'framer-motion';
+import { easeInOut, motion } from 'framer-motion';
 import resume from "../../public/Mk-Munna-Resume.pdf"
 import { FiArrowUpRight } from 'react-icons/fi';
 import { FaFacebook, FaTwitter, FaLinkedin, FaBehance } from 'react-icons/fa';
@@ -28,11 +29,12 @@ const Banner = () => {
 
     return (
         <div className='py-20 flex gap-16'>
-            <div className='w-full'>
+            
+            <div className='w-full relative'>
                 <h1 className='text-5xl font-semibold'>Hi,<span className='tata'>👋</span> This is <span className='text-primary'>Munna</span>, a Front-End Developer</h1>
                 <p className='mt-6 text-lg leading-relaxed'> My goal is to bring creative ideas to life through clean, efficient, and scalable code.</p>
-                <pre className="p-4 rounded-lg mt-8">
-                    <code className="text-teal-400">
+                <pre className="p-4 rounded-lg mt-8  ">
+                    <code className="text-teal-400 ">
                         <span className="text-[#C792EA]">&nbsp; <span className='text-Description font-bold'>1</span> const</span> <span className='text-primary2'>skills</span><span className='text-yellow-400'> = [</span><br />
                         <div className='bg-[#12151d] border-l-4 border-primary '>
                             <p className='flex items-center gap-1'>&nbsp;<span className='text-Description font-bold'>2 </span> &nbsp;'<img className='w-3' src={html} alt="" />Html5'<br /></p>
@@ -43,17 +45,36 @@ const Banner = () => {
                             <p className='flex items-center gap-1'>&nbsp;<span className='text-Description font-bold'>7 </span> &nbsp;'<img className='w-2' src={mongodb} alt="" />MongoDB'<br /></p>
                         </div>
                         <span className='text-yellow-400'>&nbsp;&nbsp;<span className='text-Description font-bold'>7 </span>]</span><span className='text-primary2'>;</span><br />
-                        <span className="text-[#C792EA]">&nbsp;&nbsp;<span className='text-Description font-bold'>8 </span> if</span> <span className='text-yellow-400'>(</span><span className='text-primary2'>have_a_project</span><span className='text-yellow-400'>)</span> <span className='text-[#C792EA]'>navigate</span><span className='text-yellow-400'>(</span>'/contact'<span className='text-yellow-400'>)</span>
+                        <span className="text-[#C792EA] ">&nbsp;&nbsp;<span className='text-Description font-bold'>8 </span> if</span> <span className='text-yellow-400'>(</span><span className='text-primary2'>have_a_project</span><span className='text-yellow-400'>)</span> <span className='text-[#C792EA]'>navigate</span><span className='text-yellow-400'>(</span>'/contact'<span className='text-yellow-400'>)</span>
+                        <motion.div
+                            initial={{ opacity: 1, y: -50, x: 400 }}
+                            animate={{
+                                opacity: 1,
+                                y: [0, -20, 0, 20, 0],
+                                x: 400,
+                                rotate: [0, 15, 0, -15, 0],
+                            }}
+                            transition={{
+                                duration: 5, // Increase the duration to make the movement slower and smoother
+                                repeat: Infinity,
+                                ease: "easeInOut"
+                            }}
+                            className='absolute z-[1]'
+                        >
+                            <img src={shape} className='w-[40px] rotate-90 ' alt="" />
+                        </motion.div>
+
                     </code>
                 </pre>
+                 
                 <div>
                     <div className='flex gap-6 items-center mt-6'>
                         <button className='text-white border uppercase px-6 py-3 rounded-3xl text-sm border-primary'>
                             <a className='flex items-center' href={resume} download={"resume"}>
                                 <motion.div
                                     initial={{ opacity: 1, y: 5, x: 0 }}
-                                    animate={{ opacity: 1, y: 0, x: 0 }}
-                                    transition={{ duration: 0.5, repeat: Infinity, repeatType: 'reverse' }}
+                                    animate={{ opacity: 1, y: 0, x: 0, }}
+                                    transition={{ duration: 0.5, repeat: Infinity, repeatType: "mirror" }}
                                     className=''>
                                     <i className="bi bi-cloud-download mr-2"></i>
                                 </motion.div>
@@ -61,7 +82,7 @@ const Banner = () => {
                             </a>
                         </button>
                         <button
-                            className='text-teal-400 underline flex gap-2 items-center uppercase'
+                            className='text-primary border-b border-primary flex gap-2 items-center uppercase'
                             onClick={() => navigate('#contact')}
                             onMouseEnter={handleHover}
                             onMouseLeave={handleHover}
@@ -72,31 +93,37 @@ const Banner = () => {
                     </div>
                 </div>
             </div>
-            <div className='w-full relative'>
-                <div className='bg-[#203556] box-shadow rounded-full size-[480px] mt-6 relative'>
-                    <div className='absolute z-[1] inset-0 size-[480px] rounded-full bg-gradient-to-b from-transparent to-[#000000] opacity-70'></div>
-                    <img className='w-[430px] rounded-bl-[210px] rounded-br-[200px] rotate-[3deg] absolute right-[30px] bottom-[3px]' src={munna} alt="" />
+            <div id='contact' className='w-full relative'>
+                <motion.div
+                    initial={{ opacity: 1, y: 150, x: 0 }}
+                    animate={{ opacity: 1, y: 150, x: [-20, 5], rotate:[0,-5] }}
+                    transition={{ duration: 2, repeat: Infinity, repeatType: 'mirror' }}
+                    className='absolute z-[1]'>
+                    <img src={shape} alt="" />
+                </motion.div>
+                <div className='bg-[#22395E] box-shadow rounded-full size-[480px] mt-6 relative'>
+                    {/* <div className='absolute z-[1] inset-0 size-[480px] rounded-full bg-gradient-to-b from-transparent to-[#0e1f55] opacity-20'></div> */}
+                    <img className='w-full  bottom-6 rounded-full rotate-[3deg] absolute ' src={munna1} alt="" />
                     
-                    
-                    <div className="absolute right-[-20px] top-[20%] flex flex-col items-center space-y-4">
-                        <div className="group px-6 bg-gray-700  hover:bg-primary  rounded-full right-2  z-[1] absolute">
-                            <a href="https://www.facebook.com/NurmohammadMonna123/" target="_blank" rel="noopener noreferrer" className="p-2  rounded-full ">
-                                <FaFacebook className="text-white text-2xl" />
-                            </a>
-                            <span className="absolute left-full ml-2 w-auto px-2 py-1 text-sm font-medium text-white bg-black rounded opacity-0 group-hover:opacity-100 transition-opacity duration-300">Facebook</span>
-                        </div>
-                        <div className="group px-6 bg-gray-700 hover:bg-primary  rounded-full -right-4 top-[80px] z-[1] absolute">
-                            <a href="https://www.linkedin.com/in/mkmunna" target="_blank" rel="noopener noreferrer" className="p-2  rounded-full ">
-                                <FaLinkedin className="text-white text-2xl" />
-                            </a>
-                            <span className="absolute left-full ml-2 w-auto px-2 py-1 text-sm font-medium text-white bg-black rounded opacity-0 group-hover:opacity-100 transition-opacity duration-300">Linkedin</span>
-                        </div>
-                        <div className="group px-6 bg-gray-700 hover:bg-primary rounded-full right-1 top-[175px] z-[1] absolute">
-                            <a href="https://github.com/mk-munna" target="_blank" rel="noopener noreferrer" className="p-2  rounded-full ">
-                                <FaGithub className="text-white text-2xl" />
-                            </a>
-                            <span className="absolute left-full ml-2 w-auto px-2 py-1 text-sm font-medium text-white bg-black rounded opacity-0 group-hover:opacity-100 transition-opacity duration-300">Linkedin</span>
-                        </div>
+                    <div className="absolute right-[-20px] top-[20%] flex flex-col items-center ">
+                        <a href='https://www.facebook.com/mkmunna' className="group p-4 bg-gradient-to-b to-[#2A343D] from-[#131B26]  hover:bg-gradient-to-b hover:from-[#166bf5] duration-700 transition-all hover:to-[#5190f5]  rounded-full right-5  z-[1] absolute">
+                            <FaFacebook className="text-white text-2xl" />
+                            <span className="absolute tooltip-bubble left-full top-1/2 -translate-y-1/2 px-[10px] py-[5px] bg-white text-black text-sm opacity-0 transition-all duration-[500ms] z-[1] group-hover:opacity-100 translate-x-0 group-hover:translate-x-4 ">Facebook</span>
+                        </a>
+                        <a href='https://www.linkedin.com/in/mkmunna' className="group p-4 bg-gradient-to-b to-[#2A343D] from-[#131B26]  hover:bg-gradient-to-b hover:from-[#166bf5] duration-700 transition-all hover:to-[#5190f5]   rounded-full -right-1 top-[70px] z-[1] absolute">
+                            <FaLinkedin className="text-white text-2xl" />
+                            <span className="absolute tooltip-bubble left-full top-1/2 -translate-y-1/2 px-[10px] py-[5px] bg-white text-black text-sm opacity-0 transition-all duration-[500ms] z-[1] group-hover:opacity-100 translate-x-0 group-hover:translate-x-4 ">Linkedin</span>
+                        </a>
+                        <a href='https://github.com/mk-munna' className="group  p-4 bg-gradient-to-b to-[#2A343D] from-[#131B26]  hover:bg-gradient-to-b hover:from-[#166bf5] duration-700 transition-all hover:to-[#5190f5]   rounded-full -right-1 top-[140px] z-[1] absolute">
+                            <FaGithub className="text-white text-2xl" />
+                            <span className="absolute tooltip-bubble left-full top-1/2 -translate-y-1/2 px-[10px] py-[5px] bg-white text-black text-sm opacity-0 transition-all duration-[500ms] z-[1] group-hover:opacity-100 translate-x-0 group-hover:translate-x-4 ">Github</span>
+                        </a>
+                        <a href='mailto:mkmunnaofficial@gmail.com' className="group  p-4 bg-gradient-to-b to-[#2A343D] from-[#131B26]  hover:bg-gradient-to-b hover:from-[#166bf5] duration-700 transition-all hover:to-[#5190f5]   rounded-full right-3 top-[210px] z-[1] absolute">
+                            <FaEnvelope className="text-white text-xl" />
+                            <span className="absolute tooltip-bubble left-full top-1/2 -translate-y-1/2 px-[10px] py-[5px] bg-white text-black text-sm opacity-0 transition-all duration-[500ms] z-[1] group-hover:opacity-100 translate-x-0 group-hover:translate-x-4">
+                                Email
+                            </span>
+                        </a>
                     </div>
                     
 

@@ -41,21 +41,21 @@ const Header = () => {
                 <li>
                     <HashLink
                         smooth
-                        to="/#blogs"
+                        to="/#skill"
                         className={activeLink === 'blogs' ? 'active' : ''}
                         onClick={() => handleSetActiveLink('blogs')}
                     >
-                        {activeLink === 'blogs' ? '<Blogs />' : 'Blogs'}
+                        {activeLink === 'skill' ? '<skill />' : 'skill'}
                     </HashLink>
                 </li>
                 <li>
                     <HashLink
                         smooth
-                        to="/#about"
+                        to="/#education"
                         className={activeLink === 'about' ? 'active' : ''}
                         onClick={() => handleSetActiveLink('about')}
                     >
-                        {activeLink === 'about' ? '<About />' : 'About'}
+                        {activeLink === 'education' ? '<education />' : 'education'}
                     </HashLink>
                 </li>
                 <li>

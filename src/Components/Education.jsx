@@ -4,7 +4,7 @@ import { MdOutlineVerified } from 'react-icons/md';
 
 const Education = () => {
     return (
-        <div>
+        <div id='education'>
             <div>
                 <h1 className='text-6xl text-center mt-20'>Education</h1>
             </div>
