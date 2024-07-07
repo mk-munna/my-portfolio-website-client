@@ -28,7 +28,7 @@ const Banner = () => {
     };
 
     return (
-        <div className='py-20 flex gap-16'>
+        <div className='py-20 flex gap-16 max-w-6xl mx-auto'>
             
             <div className='w-full relative'>
                 <h1 className='text-5xl font-semibold'>Hi,<span className='tata'>👋</span> This is <span className='text-primary'>Munna</span>, a Front-End Developer</h1>
@@ -82,13 +82,13 @@ const Banner = () => {
                             </a>
                         </button>
                         <button
-                            className='text-primary border-b border-primary flex gap-2 items-center uppercase'
+                            className='text-primary2 border-b border-primary flex gap-2 items-center uppercase'
                             onClick={() => navigate('#contact')}
                             onMouseEnter={handleHover}
                             onMouseLeave={handleHover}
                         >
                             Contact Now
-                            <FiArrowUpRight className={`text-primary2 text-xl transition duration-500 ${hovered ? 'rotate-45' : 'rotate-0'}`} />
+                            <FiArrowUpRight className={`text-secondary text-xl transition duration-500 ${hovered ? 'rotate-0' : 'rotate-45'}`} />
                         </button>
                     </div>
                 </div>

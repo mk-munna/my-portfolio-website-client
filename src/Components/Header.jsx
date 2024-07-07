@@ -12,7 +12,7 @@ const Header = () => {
     };
 
     return (
-        <div className='flex justify-between items-center py-8 '>
+        <div className='flex justify-between items-center py-8 max-w-6xl mx-auto '>
             <div className='text-xl font-semibold text-primary2 flex gap-2 items-center'>
                 <img className='w-[25px]' src={logo} alt="" />
                 Mk Munna
@@ -25,7 +25,7 @@ const Header = () => {
                         className={activeLink === 'home' ? 'active' : ''}
                         onClick={() => handleSetActiveLink('home')}
                     >
-                        {activeLink === 'home' ? '<Home />' : 'Home'}
+                        {activeLink === 'home' ? <p> <span className='text-secondary'>{"<"}</span>{"Home"} <span className='text-secondary'>{"/>"}</span> </p> : 'Home'}
                     </HashLink>
                 </li>
                 <li>
@@ -35,27 +35,27 @@ const Header = () => {
                         className={activeLink === 'projects' ? 'active' : ''}
                         onClick={() => handleSetActiveLink('projects')}
                     >
-                        {activeLink === 'projects' ? '<Projects />' : 'Projects'}
+                        {activeLink === 'projects' ? <p> <span className='text-secondary'>{"<"}</span>{"Projects"} <span className='text-secondary'>{"/>"}</span> </p> : 'Projects'}
                     </HashLink>
                 </li>
                 <li>
                     <HashLink
                         smooth
                         to="/#skill"
-                        className={activeLink === 'blogs' ? 'active' : ''}
-                        onClick={() => handleSetActiveLink('blogs')}
+                        className={activeLink === 'skill' ? 'active' : ''}
+                        onClick={() => handleSetActiveLink('skill')}
                     >
-                        {activeLink === 'skill' ? '<skill />' : 'skill'}
+                        {activeLink === 'skill' ? <p> <span className='text-secondary'>{"<"}</span>{"Skills"} <span className='text-secondary'>{"/>"}</span> </p> : 'Skills'}
                     </HashLink>
                 </li>
                 <li>
                     <HashLink
                         smooth
                         to="/#education"
-                        className={activeLink === 'about' ? 'active' : ''}
-                        onClick={() => handleSetActiveLink('about')}
+                        className={activeLink === 'education' ? 'active' : ''}
+                        onClick={() => handleSetActiveLink('education')}
                     >
-                        {activeLink === 'education' ? '<education />' : 'education'}
+                        {activeLink === 'education' ? <p> <span className='text-secondary'>{"<"}</span>{"Education"} <span className='text-secondary'>{"/>"}</span> </p> : 'Education'}
                     </HashLink>
                 </li>
                 <li>
@@ -65,7 +65,7 @@ const Header = () => {
                         className={activeLink === 'contact' ? 'active' : ''}
                         onClick={() => handleSetActiveLink('contact')}
                     >
-                        {activeLink === 'contact' ? '<Contact />' : 'Contact'}
+                        {activeLink === 'contact' ? <p> <span className='text-secondary'>{"<"}</span>{"Contact"} <span className='text-secondary'>{"/>"}</span> </p> : 'Contact'}
                     </HashLink>
                 </li>
             </ul>

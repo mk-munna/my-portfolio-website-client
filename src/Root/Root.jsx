@@ -7,7 +7,7 @@ import Footer from '../Components/Footer';
 const Root = () => {
     return (
         <div className='bg-[#121314] '>
-            <div className='max-w-6xl mx-auto'>
+            <div className=''>
                 <div className='lg:max-w-full'>
                     <Header></Header>
                     <Outlet></Outlet>
